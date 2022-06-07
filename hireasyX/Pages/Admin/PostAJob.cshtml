@@ -1,0 +1,63 @@
+﻿@page
+@model hireasyX.Pages.Admin.PostAJobModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS LINKS HERE-->
+    <link rel="stylesheet" href="~/css/postjob.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+
+    <title>Post A Job</title>
+</head>
+<body>
+
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3>Post a Job</h3>
+                <p class="blue-text">Just answer a few questions<br> so that we can find the best talent for you.</p>
+                <div class="card">
+                    <h5 class="text-center mb-4">Be The Change</h5>
+                    <form class="form-card" method="post">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Company Unique ID<span class="text-danger"> *</span></label> <input asp-for="jobs.USERID" type="text" id="lname" name="USERID" placeholder="Enter Comapny User ID" onblur="validate(2)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Job Title<span class="text-danger"> *</span></label> <input asp-for="jobs.JOB_TITLE" type="text" id="fname" name="JOB_TITLE" placeholder="Enter the job title" onblur="validate(1)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Company Name<span class="text-danger"> *</span></label> <input asp-for="jobs.COMPANY_NAME" type="text" id="lname" name="COMPANY_NAME" placeholder="Enter Company name" onblur="validate(2)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Apply Link<span class="text-danger"> *</span></label> <input asp-for="jobs.APPLY_LINK" type="text" id="lname" name="APPLY_LINK" placeholder="Enter Apply Link" onblur="validate(2)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Business Email<span class="text-danger"> *</span></label> <input asp-for="jobs.COMAPNY_EMAIL" type="text" id="email" name="COMAPNY_EMAIL" placeholder="" onblur="validate(3)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Company URL<span class="text-danger"> *</span></label> <input asp-for="jobs.COMAPNY_WEBSITE" type="text" id="mob" name="COMAPNY_WEBSITE" placeholder="" onblur="validate(4)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Salary<span class="text-danger"> *</span></label> <input asp-for="jobs.SALARY" type="text" id="job" name="SALARY" placeholder="" onblur="validate(5)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Job Type/Nature<span class="text-danger"> *</span></label> <input asp-for="jobs.JOB_NATURE" type="text" id="mob" name="JOB_NATURE" placeholder="" onblur="validate(4)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Job Location<span class="text-danger"> *</span></label> <input asp-for="jobs.LOCATION" type="text" id="mob" name="LOCATION" placeholder="" onblur="validate(4)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Job Category<span class="text-danger"> *</span></label> <input asp-for="jobs.JOB_CATEGORY" type="text" id="ans" name="JOB_CATEGORY" placeholder="" onblur="validate(6)"> </div>
+                            <div class="form-group col-12 flex-column d-flex"> <label class="form-control-label px-3">Job Description<span class="text-danger"> *</span></label> <input asp-for="jobs.JOB_DESC" type="text" id="ans" name="JOB_DESC" placeholder="" onblur="validate(6)"> </div>
+                        </div>
+                        <div class="row justify-content-end">
+                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">POST</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPTS-->
+    <script src="~/js/postjob.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</body>
+</html>
+<!--https://bbbootstrap.com/snippets/request-demo-form-validation-12274818#-->

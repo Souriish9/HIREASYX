@@ -1,0 +1,57 @@
+--creating a new db 
+
+create database hireasy
+
+--use hireasy
+use hireasy
+
+--Create table ADMIN for Registered users
+
+CREATE TABLE ADMIN
+(
+	USERID INT IDENTITY(1,1),
+	NAME VARCHAR(25),
+	EMAILID VARCHAR(30),
+	PASSWORD VARCHAR(30),
+	DEPARTMENT VARCHAR(15)
+)
+
+--Create Procedure To Insert Admin Data
+
+CREATE PROCEDURE SP_INSERT_ADMIN_DATA
+(
+	@NAME VARCHAR(25),
+	@EMAILID VARCHAR(30),
+	@PASSWORD VARCHAR(30),
+	@DEPARTMENT VARCHAR(15)
+)
+AS
+BEGIN
+	INSERT INTO ADMIN
+	VALUES
+	(
+		@NAME,
+		@EMAILID,
+		@PASSWORD,
+		@DEPARTMENT
+	)
+END
+
+--get all users data from database
+
+CREATE PROCEDURE SP_GETALLDATA
+AS
+BEGIN
+SELECT * FROM ADMIN
+END
+
+-- LOGIN SP SP_GETLOGIN
+CREATE PROCEDURE SP_GETLOGIN
+(
+	@Emailid VARCHAR(30),
+	@Password VARCHAR(30)
+)
+AS
+BEGIN
+SELECT * FROM ADMIN WHERE EMAILID=@Emailid AND PASSWORD=@Password
+END

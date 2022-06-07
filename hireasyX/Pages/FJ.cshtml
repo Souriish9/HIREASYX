@@ -1,0 +1,52 @@
+﻿@page
+@model hireasyX.Pages.FJModel
+@{
+    ViewData["Title"] = "FJ";
+    Layout = "~/Pages/Shared/_PrimaryLayout.cshtml";
+}
+
+
+
+<!-- Featured_job_start -->
+<section class="featured-job-area feature-padding">
+    <div class="container">
+        <!-- Section Tittle -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-tittle text-center">
+                    <span>Recent Job</span>
+                    <h2>Featured Jobs</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                @foreach (var item in Model.jobs)
+                {
+
+                    <!-- single-job-content -->
+                    <div class="single-job-items mb-30">
+                        <div class="job-items">
+                            <div class="company-img">
+                                <a href="job_details.html"><img src="XYZ.png" alt=""></a>
+                            </div>
+                            <div class="job-tittle">
+                                <a asp-page="/JobDetails" asp-route-heid="@item.HE_JOBID"><h4>@Html.DisplayFor(modelit => item.JOB_TITLE)</h4></a>
+                                <ul>
+                                    <li>@Html.DisplayFor(modelit => item.COMPANY_NAME)</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>@Html.DisplayFor(modelit => item.JOB_NATURE)</li>
+                                    <li>@Html.DisplayFor(modelit => item.SALARY)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="items-link f-right">
+                            <a asp-page="/JobDetails" asp-route-heid="@item.HE_JOBID">@Html.DisplayFor(modelit => item.LOCATION)</a>
+                            <span>7 hours ago</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Featured_job_end -->

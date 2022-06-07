@@ -1,0 +1,42 @@
+﻿@page
+@model hireasyX.Pages.OnPostExModel
+@{
+    ViewData["Title"] = "OnPostEx";
+}
+
+<html>
+<head>
+
+</head>
+<body>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Firstname</td>
+                <td><input type="text" id="txtfirstname" name="Firstname" /></td>
+            </tr>
+
+            <tr>
+                <td>Lastname</td>
+                <td><input type="text" id="txtlastname" name="Lastname" /></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" asp-page-handler="Submit"/>
+                    <input type="submit" value="Submit2" asp-page-handler="Hello" />
+                </td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <td>The name is @Model.MyData</td>
+                <td>@Model.Test</td>
+            </tr>
+        </table>
+    
+    </form>
+</body>
+</html>
+
